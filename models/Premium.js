@@ -6,4 +6,4 @@ const premiumSchema = new mongoose.Schema({
   activatedAt: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model("Premium", premiumSchema);
+module.exports = mongoose.model("Premium", premiumSchema, "premiums");
