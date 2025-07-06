@@ -36,6 +36,7 @@ app.get("/api/oauth/callback", async (req, res) => {
         Authorization: `Bearer ${accessToken}`,
       },
     });
+	console.log(JSON.stringify(userRes.data, null, 2));
 
     const discordUserId = userRes.data.included?.[0]?.attributes?.social_connections?.discord?.user_id;
     const tier = userRes.data.included?.[0]?.attributes?.currently_entitled_tiers?.[0]?.title || "Unknown";
